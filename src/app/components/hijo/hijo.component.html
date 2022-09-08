@@ -1,0 +1,14 @@
+<div style="border-style: solid ; padding: 10px">
+  <h3>Soy Hijo</h3>
+  <br>
+  <!-- Mostramos el valor que nos envia el padre por la variable del @Input "valorPasadoPorPadre" -->
+  Valor pasado por padre: {{this.valorPasadoPorPadre}}
+  <br>
+  <br>
+  <label for="">Valor para emitir: </label>
+  <input type="text" [(ngModel)]="valor">
+  <br>
+  <br>
+  <!-- Lanzamos la funcion controlClick cuando hacemos click en el boton para emitir el evento -->
+  <button (click)="controlClick();">Emitir Valor</button>
+</div>

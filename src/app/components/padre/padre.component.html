@@ -1,0 +1,31 @@
+<div style="border-style: solid ; padding: 10px; border-color: blue">
+  <h3>Soy Padre</h3>
+  <br>
+
+  <p>
+    Se trata de un ejemplo para comprobar como enviar y recibir datos de un componente (Padre)
+    a otro (Hijo).
+    <br>
+    - Para pasar datos al Hijo en el Padre se asigna una variable a una propiedad Input del Hijo.
+    <br>
+    - Para recibir datos del Hijo, el Hijo tiene que emitir un evento (output) y el padre controlar dicho evento.
+  </p>
+  <br>
+  <!-- En este div unicamente ponemos un input para escribir un valor que enviar al hijo -->
+  <div>
+    <label for="">Valor Para el Hijo: </label>
+    <input type="text" [(ngModel)]="valorPasarAlHijo">
+  </div>
+
+  <!-- Mostramos el valor emitido por el hijo que esta guardado en la variable -->
+  <div>
+    <p>Emitido del Hijo: {{this.valorHijo}}</p>
+  </div>
+
+  <!-- Llamamos al componente hijo
+  Le pasamos el valor que tenemos en la variable "this.valorPasarAlHijo" a la propiedad del hijo "valorPasadoPorPadre"
+  Controlamos el evento "cambio" emitido por el hijo utilizando la funcion "controlarCambioHijo( $event )" que tenemos en ts.
+  -->
+  <app-hijo [valorPasadoPorPadre]="this.valorPasarAlHijo" (cambio)="controlarCambioHijo( $event );"></app-hijo>
+</div>
+
