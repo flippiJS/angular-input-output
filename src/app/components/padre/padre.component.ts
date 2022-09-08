@@ -18,7 +18,7 @@ export class PadreComponent implements OnInit {
   }
 
   // Controlamos el evento generado por el hijo donde se envian los datos.
-  controlarCambioHijo( $event ) {
+  controlarCambioHijo( $event: string ) {
     console.log('Datos evento en Padre ' + $event );
     this.valorHijo = $event;
   }
